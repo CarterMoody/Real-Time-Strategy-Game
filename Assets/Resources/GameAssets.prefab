@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4212692780897947270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5257489605675913760}
+  - component: {fileID: 9124990423959482410}
+  m_Layer: 0
+  m_Name: GameAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5257489605675913760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212692780897947270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9124990423959482410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212692780897947270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f438ba78725f1cb4189b97dd19f740e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codeMonkeyHeadSprite: {fileID: 21300000, guid: 509474967e1ec054a95520af176ee7a9,
+    type: 3}
+  pfProjectileBulletDefault: {fileID: 4695025770729282112, guid: 8277bd9948831a849b50c793c84bfdb3,
+    type: 3}
+  pfDEsoldier: {fileID: 229626303348749651, guid: cfd82fecdc1ee424db2c45a6ab0314a2,
+    type: 3}
+  pfEnemy: {fileID: 229626303348749651, guid: cfd82fecdc1ee424db2c45a6ab0314a2, type: 3}
+  pfUSsoldier: {fileID: 8244485782996947607, guid: 7516c4c31856d3f4bbea7f0c0612d111,
+    type: 3}
+  pfUnit: {fileID: 8244485782996947607, guid: 7516c4c31856d3f4bbea7f0c0612d111, type: 3}
+  pfUnit_DE: {fileID: 229626303348749651, guid: cfd82fecdc1ee424db2c45a6ab0314a2,
+    type: 3}
+  pfUnit_US: {fileID: 8244485782996947607, guid: 7516c4c31856d3f4bbea7f0c0612d111,
+    type: 3}
+  s_ShootFlash: {fileID: 0}
+  pfSwordSlash: {fileID: 0}
+  pfEnemyFlyingBody: {fileID: 0}
+  pfImpactEffect: {fileID: 0}
+  pfDamagePopup: {fileID: 2920174026715650587, guid: d5cbb6859cac94e41a282a83df2e600c,
+    type: 3}
+  pfDashEffect: {fileID: 0}
+  m_WeaponTracer: {fileID: 0}
+  m_MarineSpriteSheet: {fileID: 0}
+  m_EnemyYellow: {fileID: 0}
+  m_EnemyOrange: {fileID: 0}
+  m_EnemyRed: {fileID: 0}

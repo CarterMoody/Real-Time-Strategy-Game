@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: f438ba78725f1cb4189b97dd19f740e5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - codeMonkeyHeadSprite: {instanceID: 0}
+  - pfProjectileBulletDefault: {instanceID: 0}
+  - pfDEsoldier: {instanceID: 0}
+  - pfEnemy: {instanceID: 0}
+  - pfUSsoldier: {instanceID: 0}
+  - pfUnit: {instanceID: 0}
+  - pfUnit_DE: {instanceID: 0}
+  - pfUnit_US: {instanceID: 0}
+  - s_ShootFlash: {instanceID: 0}
+  - pfSwordSlash: {instanceID: 0}
+  - pfEnemyFlyingBody: {instanceID: 0}
+  - pfImpactEffect: {instanceID: 0}
+  - pfDamagePopup: {instanceID: 0}
+  - pfDashEffect: {instanceID: 0}
+  - m_WeaponTracer: {instanceID: 0}
+  - m_MarineSpriteSheet: {instanceID: 0}
+  - m_EnemyYellow: {instanceID: 0}
+  - m_EnemyOrange: {instanceID: 0}
+  - m_EnemyRed: {instanceID: 0}
+  - s_USGunner: {fileID: 21300000, guid: 301a6aec1576f564dac62c1dbbfa1a4b, type: 3}
+  - s_USSoldier: {fileID: 21300000, guid: a0e8279f3ee512140b3e33bba632ae56, type: 3}
+  - s_USPinned: {fileID: 21300000, guid: 099911b8d3f504644ac2bbbbe0b32814, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
