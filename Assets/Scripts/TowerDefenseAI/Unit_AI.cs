@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey;
@@ -13,8 +13,11 @@ public class Unit_AI : MonoBehaviour
     private static Unit_AI instance;
 
     private IUnit iUnit;
-
     private IMoveRotation iMoveRotation;
+    private AudioSource source;
+    public AudioClip AR15_Shot;
+    public AudioClip AR15_Reload;
+
 
 
     private Vector3 projectileShootFromPosition;
@@ -47,6 +50,7 @@ public class Unit_AI : MonoBehaviour
         // Get Components for use later
         iUnit = GetComponent<IUnit>();
         iMoveRotation = GetComponent<IMoveRotation>();
+        source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
 
         //range = iUnit.getRange();           // Range
         //damageAmount = iUnit.getDamage();   // Damage
@@ -127,6 +131,9 @@ public class Unit_AI : MonoBehaviour
                 
                 ProjectileBulletDefault.Create(projectileShootFromPosition, attackingUnit, enemy, finalAdjustedDamage, accuracy);
                 iUnit.useAmmo(1);
+                // Play shooting sound
+                source.PlayOneShot(AR15_Shot);
+                
 
                 // Spawn Shell
                 // get direction to spawn shell
@@ -153,6 +160,8 @@ public class Unit_AI : MonoBehaviour
         if (!reloading){
             MagParticleSystemHandler.Instance.SpawnMag(magPosition, randomDirection);
             reloading = true;
+            // Play Reloading sound
+            source.PlayOneShot(AR15_Reload);
         }
 
         if (reloadTimer <= 0f) {

@@ -22,7 +22,7 @@ public class TooltipTop : MonoBehaviour
         tooltipText = transform.Find("ttt_text").GetComponent<TextMeshProUGUI>();
 
         //ShowTooltip("Welcome to Blood N Mud | Enjoy");
-        ShowTooltipTop_Static("Welcome to Blood N Mud | Enjoy");
+        ShowTooltipTop_Static("Welcome to Carter's RNG RTS | Enjoy");
     }
     private void ShowTooltip(string tooltipString)
     {

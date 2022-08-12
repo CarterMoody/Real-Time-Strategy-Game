@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8244485782996947607}
   m_RootOrder: 1
@@ -42,10 +43,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -108,6 +111,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.028, y: 0.532, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8244485782996947607}
   m_RootOrder: 0
@@ -123,10 +127,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -188,6 +194,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.37, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8244485782996947607}
   m_RootOrder: 2
@@ -210,6 +217,7 @@ GameObject:
   - component: {fileID: -4096023972236349592}
   - component: {fileID: 4279973860569600928}
   - component: {fileID: 7782714895368954954}
+  - component: {fileID: -122400166969916724}
   m_Layer: 0
   m_Name: USsoldier
   m_TagString: Untagged
@@ -227,6 +235,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7336287177235229575}
   - {fileID: 1216924691810778629}
@@ -356,6 +365,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3bc60f85ed3b64785950bb7e777555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTargetAim: {x: 0, y: 0, z: 0}
+  currentTargetPosition: {x: 0, y: 0, z: 0}
+  FleshHits:
+  - {fileID: 8300000, guid: 3bddee6439b5b95409568e23f0191f03, type: 3}
+  - {fileID: 8300000, guid: 2464e3f04940b444eb51b8f832f46e14, type: 3}
+  - {fileID: 8300000, guid: 447b441244095a149a7e871cf5aff7c2, type: 3}
+  - {fileID: 8300000, guid: b3e19b7d1e6fcc44797359b32e5f6881, type: 3}
+  - {fileID: 8300000, guid: 810262012016574448c60fbf9c0cf032, type: 3}
+  - {fileID: 8300000, guid: 3bfb737db8cc74c448c68cebc7811c46, type: 3}
+  - {fileID: 8300000, guid: fe732d5e59bf833479be01ac0c3ad496, type: 3}
   usSoldierSprite: {fileID: 21300000, guid: a0e8279f3ee512140b3e33bba632ae56, type: 3}
   usGunnerSprite: {fileID: 21300000, guid: 301a6aec1576f564dac62c1dbbfa1a4b, type: 3}
   usPinnedSprite: {fileID: 21300000, guid: 099911b8d3f504644ac2bbbbe0b32814, type: 3}
@@ -371,3 +390,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa5fdb1b5c94bc4e957fde7c4566e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AR15_Shot: {fileID: 8300000, guid: e85d24233fad2e443850f259423b4b00, type: 3}
+  AR15_Reload: {fileID: 8300000, guid: beaa97b8c9d13d5419f5ec9a16aa9ad9, type: 3}
+--- !u!82 &-122400166969916724
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244485782996947604}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e85d24233fad2e443850f259423b4b00, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

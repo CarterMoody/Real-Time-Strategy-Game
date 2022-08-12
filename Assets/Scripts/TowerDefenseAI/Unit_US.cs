@@ -115,6 +115,9 @@ public class Unit_US : MonoBehaviour, IUnit {
     public IUnit currentTargetEnemy; // set when AimEnemy is called
     public Vector3 currentTargetAim; // What positon the unit should be aiming at
     public Vector3 currentTargetPosition; // set when AimPosition is called
+    private AudioSource source;
+    private AudioClip randomClip;
+    public AudioClip[] FleshHits;
 
 
 
@@ -153,6 +156,8 @@ public class Unit_US : MonoBehaviour, IUnit {
         aimTimeMin = 1f;
 
         SetStateNormal();
+
+        source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
 
 
     }
@@ -202,7 +207,7 @@ public class Unit_US : MonoBehaviour, IUnit {
             normalSprite = usGunnerSprite;
             SetSpriteNormal();
             healthSystem = new HealthSystem(100); // give 100 health
-            ammoSystem = new AmmoSystem(5); // give 5 ammo
+            ammoSystem = new AmmoSystem(100); // give 5 ammo
             expSystem = new EXPSystem(100); // set Max EXP to 100
             rifleSkillSystem = new RifleSkillSystem(100); // Set Max Rifle Skill to 100
             //attackDamage = 30;
@@ -432,6 +437,10 @@ public class Unit_US : MonoBehaviour, IUnit {
         BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, damageDirection);
 
         DamagePopup.Create(GetPosition(), damageAmount, false);
+        // Play random Hit Sound
+        randomClip = FleshHits[UnityEngine.Random.Range(0, FleshHits.Length)];
+        source.PlayOneShot(randomClip);
+        
 
         healthSystem.Damage(damageAmount);
         if (IsDead()) {

@@ -112,6 +112,9 @@ public class Unit_DE : MonoBehaviour, IUnit {
     [SerializeField] Sprite deSoldierSprite;
     [SerializeField] Sprite dePinnedSprite;
     private Sprite normalSprite;
+    private AudioSource source;
+    private AudioClip randomClip;
+    public AudioClip[] FleshHits;
 
 
     private bool enemyInRange; // used to determine if should rotate based on movement or enemy position.
@@ -162,6 +165,8 @@ public class Unit_DE : MonoBehaviour, IUnit {
 
         normalSprite = deSoldierSprite;
         SetStateNormal();
+
+        source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
 
         
         
@@ -407,6 +412,9 @@ public class Unit_DE : MonoBehaviour, IUnit {
         BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, damageDirection);
 
         DamagePopup.Create(GetPosition(), damageAmount, false);
+        // Play random Hit Sound
+        randomClip = FleshHits[UnityEngine.Random.Range(0, FleshHits.Length)];
+        source.PlayOneShot(randomClip);
 
         healthSystem.Damage(damageAmount);
         if (IsDead()) {
