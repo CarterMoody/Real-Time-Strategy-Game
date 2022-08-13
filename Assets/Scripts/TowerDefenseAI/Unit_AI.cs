@@ -21,6 +21,7 @@ public class Unit_AI : MonoBehaviour
 
 
     private Vector3 projectileShootFromPosition;
+    private Vector3 projectileExtractorPosition;
 
     private float attackRange;
     private float attackDamage;
@@ -42,6 +43,7 @@ public class Unit_AI : MonoBehaviour
     {
         instance = this;
         projectileShootFromPosition = transform.Find("ProjectileShootFromPosition").position;
+        projectileExtractorPosition = transform.Find("ProjectileExtractorPosition").position;
 
         enemyInRange = false;
         reloading = false;
@@ -66,6 +68,7 @@ public class Unit_AI : MonoBehaviour
     private void Update()
     {
         projectileShootFromPosition = transform.Find("ProjectileShootFromPosition").position;
+        projectileExtractorPosition = transform.Find("ProjectileExtractorPosition").position;
         if (Input.GetMouseButtonDown(0))
         {
             //CMDebug.TextPopupMouse("Click!");
@@ -140,8 +143,7 @@ public class Unit_AI : MonoBehaviour
                 Vector3 shellMoveDir = UtilsClass.ApplyRotationToVector(rotationDir, -120f);
                 float randomAngleTweak = Random.Range(-10.0f, 10.0f);
                 shellMoveDir = UtilsClass.ApplyRotationToVector(shellMoveDir, randomAngleTweak);
-                Vector3 extractorPosition = projectileShootFromPosition + new Vector3(.25f, .25f, 0);
-                ShellParticleSystemHandler.Instance.SpawnShell(extractorPosition, shellMoveDir);
+                ShellParticleSystemHandler.Instance.SpawnShell(projectileExtractorPosition, shellMoveDir);
             }
         }
         else { // ENEMY NOT IN RANGE
