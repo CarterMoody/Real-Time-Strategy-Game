@@ -1,10 +1,33 @@
 # RTS_Github_Repository
  Real Time Strategy Game GitHub Repository
  
- 
-Repository initialized with BNM.v.1.0.7 - RifleSkill
+ *Working title* of the game is Carter's RNG RTS
 
-Previous versions may be uploaded later
+The APK in the repository is built for any phone running Android 7.0 Nougat or newer.
+The APK is NOT updated with each new push of code changes.
 
-*** Comment out the line about lighting which throws an error... this is a Unity error to-be-fixed :)
-*** Trying to update after this commit to newer Unity version... perhaps it is fixed? If not revert here!"
+
+## There is a LOT to be added listed below: FEEL FREE TO OPEN A PULL REQUEST :)    
+
+
+### Improved UI for mobile...      
+ - Selecting troops    
+ - Viewing troop stats    
+ - etc...    
+ -    
+
+### General Settings    
+ - Sound Effects    
+ - Music    
+ - Save/Load    
+ -    
+
+### Core Gameplay    
+- Additional Troops    
+- Vehicles    
+- Buildings    
+- Officer Commands    
+- Signaller Commands    
+- Ribbons/Stat tracking    
+- Game Modes with various starting setups    
+-    
