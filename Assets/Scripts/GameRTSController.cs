@@ -89,8 +89,11 @@ public class GameRTSController : MonoBehaviour
             {
                 Debug.Log("Count Selected Units: " + selectedUnitRTSList.Count);
                 Debug.Log("Unit EXP: " + unitRTS.GetComponent<IUnit>().getEXP());
+                Vector3 destination = targetPositionList[targetPositionListIndex];
+                Debug.Log("Destination Coords: " + destination);
                 //Debug.Log(unitRTS);
-                unitRTS.MoveTo(targetPositionList[targetPositionListIndex]);
+                unitRTS.MoveTo(destination);    // Tell the unit to move to position in list
+                DestinationParticleSystemHandler.Instance.SpawnDestinationParticle(destination);
                 targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
             }
         }
