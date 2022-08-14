@@ -152,13 +152,13 @@
      <Compile Include="Assets\Scripts\myGO2.cs" />
      <Compile Include="Assets\Scripts\WaveTracker.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-     <Compile Include="Assets\audio.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\Shoot_Flash.cs" />
      <Compile Include="Assets\MeshParticleSystem\Scripts\DestinationParticleSystemHandler.cs" />
+     <Compile Include="Assets\Scripts\Tooltip\UISoundScript.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
