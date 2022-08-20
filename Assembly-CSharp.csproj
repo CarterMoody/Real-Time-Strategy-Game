@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\TowerDefenseAI\IUnit.cs" />
      <Compile Include="Assets\Scripts\ModularCharacter\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PointBank.cs" />
+     <Compile Include="Assets\MeshParticleSystem\Scripts\DestinationParticleSystemHandler.cs" />
      <Compile Include="Assets\_\Base\BaseScripts\HealthSystem.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\SetSpriteSorting.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -92,6 +93,7 @@
      <Compile Include="Assets\Scripts\KillCount.cs" />
      <Compile Include="Assets\Scripts\DEwalk.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+     <Compile Include="Assets\Scripts\Tooltip\UISoundScript.cs" />
      <Compile Include="Assets\MeshParticleSystem\Scripts\Testing.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionUpdater.cs" />
      <Compile Include="Assets\MeshParticleSystem\Scripts\MeshParticleSystem.cs" />
@@ -157,8 +159,8 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\Shoot_Flash.cs" />
-     <Compile Include="Assets\MeshParticleSystem\Scripts\DestinationParticleSystemHandler.cs" />
-     <Compile Include="Assets\Scripts\Tooltip\UISoundScript.cs" />
+     <Compile Include="Assets\TabGroup.cs" />
+     <Compile Include="Assets\TabButton.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
