@@ -22,6 +22,7 @@ public class UIbackScript : MonoBehaviour
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        background = GetComponent<Image>();
         mouseOver = false;
         ShowUIMenu();
         background.sprite = tabIdle;
@@ -60,8 +61,14 @@ public class UIbackScript : MonoBehaviour
         if (mouseOver == false)
         {
             mouseOver = true;
-            TooltipFollow.ShowTooltip_Static("Back");
-            Debug.Log("Mouse over");
+            if (menuHidden == true)
+            {
+                TooltipFollow.ShowTooltip_Static("Show Menu");
+            }
+            if (menuHidden == false)
+            {
+                TooltipFollow.ShowTooltip_Static("Hide Menu");
+            }
         }
         
 
