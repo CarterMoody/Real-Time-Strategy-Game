@@ -11,6 +11,7 @@ public class TabGroup : MonoBehaviour
     public Sprite tabActive;
     public TabButton selectedTab;
     public List<GameObject> objectsToSwap;
+    public PanelGroup panelGroup;
 
     public void Subscribe(TabButton button)
     {
@@ -65,6 +66,11 @@ public class TabGroup : MonoBehaviour
             button.background.sprite = tabActive;
             TooltipFollow.HideTooltip_Static(); 
             SetOtherChildrenInactive(button);
+        }
+
+        if (panelGroup != null)
+        {
+            panelGroup.SetPageIndex(selectedTab.transform.GetSiblingIndex());
         }
 
     }
