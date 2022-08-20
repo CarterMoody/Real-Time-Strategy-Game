@@ -2338,6 +2338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIMenu: {fileID: 1727955109}
+  background: {fileID: 0}
+  tabIdle: {fileID: 21300000, guid: 4965e050e200b5e4897a4c5041bee052, type: 3}
+  tabHover: {fileID: 21300000, guid: 9bf259c421e2a2541853c4578d4d619d, type: 3}
+  tabActive: {fileID: 0}
+  menuHiddenSprite: {fileID: 21300000, guid: ee5251a815ac1ec4faf5d9fe73744f2c, type: 3}
+  menuVisibleSprite: {fileID: 21300000, guid: 63f456f1bcb795948ac12e9f9080a719, type: 3}
 --- !u!114 &688914879
 MonoBehaviour:
   m_ObjectHideFlags: 0
