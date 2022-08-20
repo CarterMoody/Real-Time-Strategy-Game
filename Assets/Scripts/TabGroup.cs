@@ -42,19 +42,30 @@ public class TabGroup : MonoBehaviour
 
     public void OnTabSelected(TabButton button)
     {
-        if(selectedTab != null)
+        // Handle case where user clicks again to hide tab
+        if(selectedTab == button)
         {
             selectedTab.Deselect();
+            selectedTab = null;
+            ResetTabs();
+            SetAllChildrenInactive();
         }
+        else
+        {
+            if(selectedTab != null)
+            {
+                selectedTab.Deselect();
+            }
 
-        selectedTab = button;
+            selectedTab = button;
 
-        selectedTab.Select();
+            selectedTab.Select();
 
-        ResetTabs();
-        button.background.sprite = tabActive;
-        TooltipFollow.HideTooltip_Static(); 
-        SetOtherChildrenInactive(button);
+            ResetTabs();
+            button.background.sprite = tabActive;
+            TooltipFollow.HideTooltip_Static(); 
+            SetOtherChildrenInactive(button);
+        }
 
     }
 

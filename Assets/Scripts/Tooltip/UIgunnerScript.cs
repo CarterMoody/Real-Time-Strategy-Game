@@ -42,7 +42,7 @@ public class UIgunnerScript : MonoBehaviour
         if (mouseOver == false)
         {
             mouseOver = true;
-            TooltipFollow.ShowTooltip_Static("Gunner | M1919");
+            //TooltipFollow.ShowTooltip_Static("Gunner | M1919");
             //Debug.Log("Mouse over");
         }
         

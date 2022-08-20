@@ -15,11 +15,13 @@ public class TooltipTop : MonoBehaviour
 
     private TextMeshProUGUI tooltipText;
     private RectTransform backgroundRectTransform;
+    private RectTransform tooltipTextRectTransform;
     private void Awake()
     {
         instance = this;
         backgroundRectTransform = transform.Find("ttt_background").GetComponent<RectTransform>();
         tooltipText = transform.Find("ttt_text").GetComponent<TextMeshProUGUI>();
+        tooltipTextRectTransform = transform.Find("ttt_text").GetComponent<RectTransform>();
 
         //ShowTooltip("Welcome to Blood N Mud | Enjoy");
         ShowTooltipTop_Static("Welcome to Carter's RNG RTS | Enjoy");
@@ -30,7 +32,9 @@ public class TooltipTop : MonoBehaviour
 
         tooltipText.SetText(tooltipString);
         float textPaddingSize = 4f;
-        Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize * 2f, tooltipText.preferredHeight + textPaddingSize * 2f);
+        //Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize * 2f, tooltipText.preferredHeight + textPaddingSize * 2f);
+        float toolTipWidth = tooltipTextRectTransform.sizeDelta.x;
+        Vector2 backgroundSize = new Vector2(toolTipWidth + textPaddingSize * 1f, tooltipText.preferredHeight + textPaddingSize * 2f);
         backgroundRectTransform.sizeDelta = backgroundSize;
     }
 

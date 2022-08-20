@@ -42,7 +42,7 @@ public class UIsoldierScript : MonoBehaviour
         if (mouseOver == false)
         {
             mouseOver = true;
-            TooltipFollow.ShowTooltip_Static("Private | M4A1");
+            //TooltipFollow.ShowTooltip_Static("Private | M4A1");
             //Debug.Log("Mouse over");
         }
         

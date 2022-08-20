@@ -113,7 +113,6 @@
      <Compile Include="Assets\Scripts\DE_Spawner.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
-     <Compile Include="Assets\Scripts\Tooltip\UITroopSelectionMouse.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\_\Base\BaseScripts\EXPSystem.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -159,8 +158,9 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\Shoot_Flash.cs" />
-     <Compile Include="Assets\TabGroup.cs" />
-     <Compile Include="Assets\TabButton.cs" />
+     <Compile Include="Assets\Scripts\TabButton.cs" />
+     <Compile Include="Assets\Scripts\TabGroup.cs" />
+     <Compile Include="Assets\Scripts\ButtonHover.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
