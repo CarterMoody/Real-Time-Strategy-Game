@@ -66,7 +66,7 @@ public class DestinationParticleSystemHandler : MonoBehaviour {
             this.meshParticleSystem = meshParticleSystem;
 
             quadSize = new Vector3(0.1f, 0.1f);
-            maxQuadSize = new Vector3(0.5f, 0.5f);
+            maxQuadSize = new Vector3(1f, 1f);
             rotation = Random.Range(0, 360f);
             rotationSpeed = Random.Range(10.0f, 15.0f);
             shrinkSpeed = 0.99f;

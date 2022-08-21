@@ -151,10 +151,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 519420032}
   - {fileID: 1408795791}
   - {fileID: 248282975}
   - {fileID: 645671450}
-  - {fileID: 519420032}
   - {fileID: 91234118}
   - {fileID: 2016679168}
   - {fileID: 831875699}
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DESoldierPrefab: {fileID: 229626303348749648, guid: cfd82fecdc1ee424db2c45a6ab0314a2,
     type: 3}
-  startPositionY: 1
+  startPositionY: 17
   immediatelySpawnTroops: 1
 --- !u!1 &248282974
 GameObject:
@@ -727,7 +727,7 @@ Transform:
   m_Children:
   - {fileID: 1546252416}
   m_Father: {fileID: 15576039}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260324746
 GameObject:
@@ -2102,7 +2102,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 15576039}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535722503
 GameObject:
@@ -2209,7 +2209,7 @@ Transform:
   - {fileID: 784624051}
   - {fileID: 90626650}
   m_Father: {fileID: 15576039}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &688914873
 GameObject:
@@ -3793,7 +3793,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 15576039}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4624,7 +4624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1669710865
 RectTransform:
   m_ObjectHideFlags: 0
