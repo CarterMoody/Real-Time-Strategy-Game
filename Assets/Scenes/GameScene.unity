@@ -2219,7 +2219,6 @@ GameObject:
   - component: {fileID: 688914878}
   - component: {fileID: 688914881}
   - component: {fileID: 688914880}
-  - component: {fileID: 688914879}
   m_Layer: 0
   m_Name: UIBack
   m_TagString: Untagged
@@ -2344,27 +2343,6 @@ MonoBehaviour:
   tabActive: {fileID: 0}
   menuHiddenSprite: {fileID: 21300000, guid: ee5251a815ac1ec4faf5d9fe73744f2c, type: 3}
   menuVisibleSprite: {fileID: 21300000, guid: 63f456f1bcb795948ac12e9f9080a719, type: 3}
---- !u!114 &688914879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688914873}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051e6b93c7db2f44ca4e788357c98663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabGroup: {fileID: 0}
-  background: {fileID: 0}
-  toolTipText: back
-  onTabSelected:
-    m_PersistentCalls:
-      m_Calls: []
-  onTabDeselected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &688914880
 MonoBehaviour:
   m_ObjectHideFlags: 0
