@@ -55,12 +55,14 @@
      <Compile Include="Assets\Scripts\TowerDefenseAI\Unit_US.cs" />
      <Compile Include="Assets\Scripts\ModularCharacter\MovePositionDirect.cs" />
      <Compile Include="Assets\Scripts\GameRTSController.cs" />
+     <Compile Include="Assets\Scripts\TabGroup.cs" />
      <Compile Include="Assets\Scripts\ModularCharacter\PlayerMovementKeys.cs" />
      <Compile Include="Assets\Scripts\Tooltip\UIgunnerScript.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\Sound_Manager.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\Button_Sprite.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollowSetup.cs" />
+     <Compile Include="Assets\Scripts\TabButton.cs" />
      <Compile Include="Assets\Scripts\WaveCounter.cs" />
      <Compile Include="Assets\Scripts\TowerDefenseAI\ProjectileBulletDefault.cs" />
      <Compile Include="Assets\Scripts\DESpawnMovement.cs" />
@@ -106,6 +108,7 @@
      <Compile Include="Assets\Scripts\ModularCharacter\IMovePosition.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionTimer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+     <Compile Include="Assets\Scripts\ButtonHover.cs" />
      <Compile Include="Assets\Scripts\ModularCharacter\IAttack.cs" />
      <Compile Include="Assets\Scripts\USonMouseOver.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -158,9 +161,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
      <Compile Include="Assets\_\Stuff\Scripts\Shoot_Flash.cs" />
-     <Compile Include="Assets\Scripts\TabButton.cs" />
-     <Compile Include="Assets\Scripts\TabGroup.cs" />
-     <Compile Include="Assets\Scripts\ButtonHover.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
