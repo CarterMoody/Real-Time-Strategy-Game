@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
-public class UIbackScript : MonoBehaviour
+public class UIbackScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameObject UIMenu;
     public Image background;
@@ -36,7 +38,7 @@ public class UIbackScript : MonoBehaviour
 
 
     // Called when mouse clicks on object
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         // Move this sprites position away, and move the Children UI in its place
         //Debug.Log("Detected Mouse Down (Click)");
@@ -54,7 +56,7 @@ public class UIbackScript : MonoBehaviour
     }
 
     // Called when mouse over object
-    void OnMouseOver()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //Debug.Log("Detected Mouse Over");
@@ -75,7 +77,7 @@ public class UIbackScript : MonoBehaviour
     }
 
     // Called when mouse not over object
-    void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         //Debug.Log("mouse not on US");
         mouseOver = false;
