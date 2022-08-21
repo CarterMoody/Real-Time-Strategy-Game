@@ -53,6 +53,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     void Start()
     {
         background = GetComponent<Image>();
+        background.sprite = tabGroup.tabIdle; // Reset tabs from TabGroup on start should work.. but doesn't for some objects...
         tabGroup.Subscribe(this);
         
     }
