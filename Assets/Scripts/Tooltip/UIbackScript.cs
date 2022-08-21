@@ -9,25 +9,14 @@ using UnityEngine.Events;
 public class UIbackScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameObject UIMenu;
-    public Image background;
-    public Sprite tabIdle;
-    public Sprite tabHover;
-    public Sprite tabActive;
-    public Sprite menuHiddenSprite;
-    public Sprite menuVisibleSprite;
-        
-    private SpriteRenderer spriteRenderer;
     private bool mouseOver;
     private bool menuHidden;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        background = GetComponent<Image>();
         mouseOver = false;
         ShowUIMenu();
-        background.sprite = tabIdle;
     }
 
     // Update is called once per frame
@@ -58,7 +47,6 @@ public class UIbackScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     // Called when mouse over object
     public void OnPointerEnter(PointerEventData eventData)
     {
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //Debug.Log("Detected Mouse Over");
         if (mouseOver == false)
         {
@@ -93,7 +81,6 @@ public class UIbackScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             if (i == index) { continue; }
             UIMenu.transform.GetChild(i).gameObject.SetActive(false);
         }
-        spriteRenderer.sprite = menuHiddenSprite;
         menuHidden = true;
     }
 
@@ -106,7 +93,6 @@ public class UIbackScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             if (i == index) { continue; }
             UIMenu.transform.GetChild(i).gameObject.SetActive(true);
         }
-        spriteRenderer.sprite = menuVisibleSprite;
         menuHidden = false;  
     }
 }

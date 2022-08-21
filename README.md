@@ -29,9 +29,13 @@ The APK is NOT updated with each new push of code changes.
 - Officer Commands    
 - Signaller Commands    
 - Ribbons/Stat tracking    
-- Game Modes with various starting setups    
+- Game Modes with various starting setups   
 -    
+
+### Additional Features
+- Add Blood to bleeding or injured enemies so easier to notice someone is hurting
 
 
 ### Technical Debt
-- Refactor common unit abilities into parent class or interface    
+- Refactor common unit abilities into parent class or interface   
+- Refactor and create button toggle components 

@@ -4,9 +4,6 @@ using UnityEngine;
 using CodeMonkey.Utils;
 public class UISoundScript : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite soundOnSprite;
-    public Sprite soundOffSprite;
     private AudioSource source;
     private bool mouseOver;
     private bool soundOn = true;
@@ -15,7 +12,6 @@ public class UISoundScript : MonoBehaviour
     {
         mouseOver = false;
         source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,13 +30,11 @@ public class UISoundScript : MonoBehaviour
         {
             TooltipTop.ShowTooltipTop_Static("Ears off");
             AudioListener.volume = 0;
-            spriteRenderer.sprite = soundOffSprite;
             soundOn = false;
         }
         else {
             TooltipTop.ShowTooltipTop_Static("Ears on");
             AudioListener.volume = 1;
-            spriteRenderer.sprite = soundOnSprite;
             soundOn = true;
         }
         

@@ -21,11 +21,13 @@ public class BloodParticleSystemHandler : MonoBehaviour {
 
     private MeshParticleSystem meshParticleSystem;
     private List<Single> singleList;
+    public bool bloodEnabled;
 
     private void Awake() {
         Instance = this;
         meshParticleSystem = GetComponent<MeshParticleSystem>();
         singleList = new List<Single>();
+        bloodEnabled = true;
     }
 
     private void Update() {
@@ -33,16 +35,29 @@ public class BloodParticleSystemHandler : MonoBehaviour {
             Single single = singleList[i];
             single.Update();
             if (single.IsParticleComplete()) {
+                single.DestroySelf();
                 singleList.RemoveAt(i);
                 i--;
             }
         }
     }
 
+    public void EnableBlood()
+    {
+        bloodEnabled = true;
+    }
+    public void DisableBlood()
+    {
+        bloodEnabled = false;
+    }
+
     public void SpawnBlood(Vector3 position, Vector3 direction) {
-        float bloodParticleCount = 3;
-        for (int i = 0; i < bloodParticleCount; i++) {
-            singleList.Add(new Single(position, UtilsClass.ApplyRotationToVector(direction, Random.Range(-15f, 15f)), meshParticleSystem));
+        if (bloodEnabled)
+        {
+            float bloodParticleCount = 3;
+            for (int i = 0; i < bloodParticleCount; i++) {
+                singleList.Add(new Single(position, UtilsClass.ApplyRotationToVector(direction, Random.Range(-15f, 15f)), meshParticleSystem));
+            }
         }
     }
 
@@ -86,6 +101,10 @@ public class BloodParticleSystemHandler : MonoBehaviour {
 
         public bool IsParticleComplete() {
             return moveSpeed < .1f;
+        }
+
+        public void DestroySelf(){
+            meshParticleSystem.DestroyQuad(quadIndex);
         }
 
     }
