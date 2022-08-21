@@ -13,6 +13,7 @@ The APK is NOT updated with each new push of code changes.
 ### Improved UI for mobile...      
  - Selecting troops    
  - Viewing troop stats    
+ - Two finger tap currently marks destination, should form a line not circle
  - etc...    
  -    
 
