@@ -13,7 +13,7 @@ The APK is NOT updated with each new push of code changes.
 ### Improved UI for mobile...      
  - Selecting troops    
  - Viewing troop stats    
- - Two finger tap currently marks destination, should form a line not circle
+ - Two finger tap rework for destination?    
  - etc...    
  -    
 
@@ -31,12 +31,18 @@ The APK is NOT updated with each new push of code changes.
 - Signaller Commands    
 - Ribbons/Stat tracking    
 - Game Modes with various starting setups   
+- Profile settings page and point system to upgrade perks    
 -    
 
 ### Additional Features
-- Add Blood to bleeding or injured enemies so easier to notice someone is hurting
+- Add Blood to bleeding or injured enemies so easier to notice someone is hurting    
+- Settings page for troop abilities to tweak balance on the fly (reload time, mag capacity, etc)    
+-     
 
 
 ### Technical Debt
 - Refactor common unit abilities into parent class or interface   
-- Refactor and create button toggle components 
+- Refactor and create button toggle components    
+- Refactor unitUS script to abstract out stats and expose them in Unity editor       
+- Refactor unitUS script into smaller more manageable hierarchy of scripts    
+-    
