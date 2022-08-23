@@ -6,6 +6,9 @@
 The APK in the repository is built for any phone running Android 7.0 Nougat or newer.
 The APK is NOT updated with each new push of code changes.
 
+To open the Unity Scene Hierarchy (default blank scene is opened by default in Unity Editor):
+- File -> Open Scene -> Assets/Scenes/GameScene.unity 
+
 
 ## There is a LOT to be added listed below: FEEL FREE TO OPEN A PULL REQUEST :)    
 
