@@ -2,3 +2,5 @@ Library/
 !/[Ll]ibrary/*.asset
 Temp/
 Logs/
+
+UserSettings/EditorUserSettings.asset
