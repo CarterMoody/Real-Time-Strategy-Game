@@ -145,6 +145,7 @@ public class Unit_US : MonoBehaviour, IUnit {
     [SerializeField] Sprite usPinnedSprite;
 
     private void Awake() {
+        baseStats = gameObject.GetComponent<Unit_Base_Stats>();
         unit_USList.Add(this);
         characterBase = gameObject.GetComponent<Character_Base>();
         unit_AI = GetComponent<Unit_AI>();
@@ -168,6 +169,8 @@ public class Unit_US : MonoBehaviour, IUnit {
         healthSystem.OnHealthChanged += (object sender, EventArgs e) => {
             healthBar.SetSize(healthSystem.GetHealthNormalized());
         };
+
+        
         //*/
     }
 
