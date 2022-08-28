@@ -55,4 +55,6 @@
     }
 
     "omnisharp.projectLoadTimeout": 600
+    "omnisharp.useModernNet": false,
+    "omnisharp.path": "",
 }
