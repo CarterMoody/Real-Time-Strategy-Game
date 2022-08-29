@@ -25,7 +25,7 @@ using CodeMonkey.Utils;
 
 // Enemy is replaced by Unit_DE for US soldiers
 
-public class Unit_DE : MonoBehaviour, IUnit {
+public class Unit_DE : Unit_AI {
     
 
     public static List<Unit_DE> unit_DEList = new List<Unit_DE>();
@@ -149,12 +149,12 @@ public class Unit_DE : MonoBehaviour, IUnit {
         //fastAttackRange = 15f;
         //reloadTime = 5f;
         //rateOfFire = 1f;
-        unit_AI.SetAttackDamage(50f);
-        unit_AI.SetAttackRange(20f);
-        unit_AI.SetReloadTime(5f);
-        unit_AI.SetRateOfFire(1f);
-        unit_AI.SetMinimumDamage(10f);
-        unit_AI.SetRandomRifleSkill(10f, 20f); // purposefully low for now
+        unit_AI.setAttackDamage(50f);
+        unit_AI.setAttackRange(20f);
+        unit_AI.setReloadTime(5f);
+        unit_AI.setRateOfFire(1f);
+        unit_AI.setMinimumDamage(10f);
+        unit_AI.setRandomRifleSkill(10f, 20f); // purposefully low for now
         iMoveRotation = GetComponent<IMoveRotation>();
         //enemyInRange = false;
         pinnedTime = 2f;
@@ -522,7 +522,7 @@ public class Unit_DE : MonoBehaviour, IUnit {
     }
 
     public IUnit GetClosestEnemy() {
-        return Unit_US.GetClosestUnit_US(transform.position, unit_AI.GetAttackRange());
+        return Unit_US.GetClosestUnit_US(transform.position, unit_AI.getAttackRange());
     }
 
     private void SetSpritePinned(){

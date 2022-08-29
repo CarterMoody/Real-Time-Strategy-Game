@@ -25,13 +25,43 @@ public interface IUnit
 
     int getEXP();
 
-    float getRange();
-    float getDamage();
-    float getRateOfFire();
-    float getReloadTime();
-
     void Pin();
 
     string GetTeam();
+
+
+
+    // Setter Methods (Public Variables can also be controlled in Unity GUI)
+    // Just make sure you save the scene!
+    void setAttackDamage(float attackDamage);
+    void setAttackRange(float attackRange);
+    void setReloadTime(float reloadTime);
+    void setRateOfFire(float rateOfFire);
+    void setMinimumDamage(float minimumDamage);
+    void SetMaximumDamage(float maximumDamage);
+    void setStartingHealth(float startingHealth);
+    void setMaxHealth(float maxHealth);
+    void setStartingAmmo(float startingAmmo);
+    void setMaxAmmo(float maxAmmo);
+    void setStartingEXP(float startingEXP);
+    void setMaxEXP(float maxEXP);
+    void setStartingRifleSkill(float startingRifleSkill);
+    void setMaxRifleSKill(float maxRifleSkill);
+    // Getter Methods
+    float getAttackDamage();
+    float getAttackRange();
+    float getReloadTime();
+    float getRateOfFire();
+    float getMinimumDamage();
+    float getMaximumDamage();
+    float getStartingHealth();
+    float getMaxHealth();
+    float getStartingAmmo();
+    float getMaxAmmo();
+    float getStartingEXP();
+    float getMaxEXP();
+    float getStartingRifleSkill();
+    float getMaxRifleSKill();
+
 
 }

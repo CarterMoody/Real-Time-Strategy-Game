@@ -25,7 +25,7 @@ using CodeMonkey.Utils;
 
 // Enemy is replaced by Unit_US for US soldiers
 
-public class Unit_US : MonoBehaviour, IUnit {
+public class Unit_US : Unit_AI {
     
 
     public static List<Unit_US> unit_USList = new List<Unit_US>();
@@ -145,7 +145,7 @@ public class Unit_US : MonoBehaviour, IUnit {
     [SerializeField] Sprite usPinnedSprite;
 
     private void Awake() {
-        baseStats = gameObject.GetComponent<Unit_Base_Stats>();
+        //baseStats = gameObject.GetComponent<Unit_Base_Stats>();
         unit_USList.Add(this);
         characterBase = gameObject.GetComponent<Character_Base>();
         unit_AI = GetComponent<Unit_AI>();
@@ -156,6 +156,7 @@ public class Unit_US : MonoBehaviour, IUnit {
         aimTimeMax = 5f;
         aimTimeMin = 1f;
 
+        // Move to Unit_AI?
         SetStateNormal();
 
         source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
@@ -197,12 +198,12 @@ public class Unit_US : MonoBehaviour, IUnit {
             //fastAttackRange = 15f;
             //reloadTime = 5f;
             //rateOfFire = 1f;
-            unit_AI.SetAttackDamage(50f);
-            unit_AI.SetAttackRange(20f);
-            unit_AI.SetReloadTime(5f);
-            unit_AI.SetRateOfFire(1f);
-            unit_AI.SetMinimumDamage(10f);
-            unit_AI.SetRandomRifleSkill(10f, 40f);
+            unit_AI.setAttackDamage(50f);
+            unit_AI.setAttackRange(20f);
+            unit_AI.setReloadTime(5f);
+            unit_AI.setRateOfFire(1f);
+            unit_AI.setMinimumDamage(10f);
+            unit_AI.setRandomRifleSkill(10f, 40f);
             
             break;
         case Unit_USType.Gunner:
@@ -218,12 +219,12 @@ public class Unit_US : MonoBehaviour, IUnit {
             //fastAttackRange = 15f;
             //reloadTime = 10f;
             //rateOfFire = .1f; 
-            unit_AI.SetAttackDamage(30f);
-            unit_AI.SetAttackRange(20f);
-            unit_AI.SetReloadTime(10f);
-            unit_AI.SetRateOfFire(.1f);
-            unit_AI.SetMinimumDamage(10f);
-            unit_AI.SetRandomRifleSkill(10f, 40f);
+            unit_AI.setAttackDamage(30f);
+            unit_AI.setAttackRange(20f);
+            unit_AI.setReloadTime(10f);
+            unit_AI.setRateOfFire(.1f);
+            unit_AI.setMinimumDamage(10f);
+            unit_AI.setRandomRifleSkill(10f, 40f);
             break;        
 
         //case Unit_USType.Red:         
@@ -324,11 +325,13 @@ public class Unit_US : MonoBehaviour, IUnit {
         //SetSpriteAiming;
         SetStateAiming();
     }
-    public void Pin(){
+
+/*     public void Pin(){
         pinnedTimer = pinnedTime;
         pinned = true; 
         SetStatePinned();
-    }
+    } */
+
     private void PinnedLogic(){
         pinnedTimer -= Time.deltaTime;
 
@@ -369,37 +372,13 @@ public class Unit_US : MonoBehaviour, IUnit {
         return calculatedAimTime;
     }
 
+// May want to override these?
+/*
     public void useAmmo(int amount)
-    {
-        //Debug.Log("amount bullets used: " + amount.ToString());
-        ammoSystem.UseAmmo(amount);
-        int currentAmmo = ammoSystem.GetAmmo();
-        //Debug.Log("Amount ammo left: " + currentAmmo.ToString());
-        if (IsOutOfAmmo()){
-            //Debug.Log("Setting State To Reloading");     
-            GetComponent<IMovePosition>().resumeMovement(); // cancel a pause on movement if any
-            SetStateReloading();
-        }
-    }
 
-
-    public void reloadAmmoComplete()
-    {
-        ammoSystem.ReloadComplete();
-    }
 
     private void Reload() // Called repeatedly when in StateReloading
-    {
-        int currentAmmo = ammoSystem.GetAmmo();
-        if (IsOutOfAmmo()){
-            unit_AI.Reload(); // begin reloading
-        }
-        else{ // finished reloading 
-            SetStateNormal();
-        }
-
-
-    }
+*/
 
 
 
@@ -433,8 +412,8 @@ public class Unit_US : MonoBehaviour, IUnit {
         }
     }
 
-
-    public void Damage(int damageAmount, Vector3 damageDirection, IUnit attackingUnit) {
+// May want to override this?
+/*     public void Damage(int damageAmount, Vector3 damageDirection, IUnit attackingUnit) {
         Vector3 bloodDir = UtilsClass.GetRandomDir();
         //Blood_Handler.SpawnBlood(GetPosition(), bloodDir);
         BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, damageDirection);
@@ -461,16 +440,9 @@ public class Unit_US : MonoBehaviour, IUnit {
             // Knockback
             //transform.position += bloodDir * .0025f;
         }
-    }
+    } */
 
-    public void addEXP(int amount){
-        //Debug.Log("Receiving EXP: " + amount);
-        expSystem.addEXP(amount);
-    }
 
-    public int getEXP(){
-        return expSystem.GetEXP();
-    }
 
     public float GetRange() {
         return attackRange;
@@ -502,61 +474,9 @@ public class Unit_US : MonoBehaviour, IUnit {
         this.pathVectorList = pathVectorList;
     }
 
-    public Vector3 GetPosition() {
-        return transform.position;
-    }
-        
 
-    public bool IsDead() {
-        return healthSystem.IsDead();
-    }
-
-    public bool IsOutOfAmmo()
-    {
-        return ammoSystem.IsOutOfAmmo();
-    }
-
-    public float getRange(){
-        return attackRange;
-    }
-    public float getDamage(){
-        return attackDamage;
-    }
-    public float getRateOfFire(){
-        return rateOfFire;
-    }
-    public float getReloadTime(){
-        return reloadTime;
-    }
-    
-    private void SetStateNormal() {
-        SetSpriteNormal();
-        state = State.Normal;
-    }
-
-    private void SetStateAttacking() {
-        state = State.Attacking;
-    }
-
-    private void SetStateReloading()
-    {
-        state = State.Reloading;
-    }
-
-    private void SetStatePinned()
-    {
-        SetSpritePinned();
-        state = State.Pinned;
-    }
-
-    private void SetStateAiming()
-    {
-        //SetSpriteAiming();
-        state = State.Aiming;
-    }
-
-    public IUnit GetClosestEnemy() {
-        return Unit_DE.GetClosestUnit_DE(transform.position, unit_AI.GetAttackRange());
+    public virtual IUnit GetClosestEnemy() {
+        return Unit_DE.GetClosestUnit_DE(transform.position, unit_AI.getAttackRange());
     }
 
     private void SetSpriteNormal(){
@@ -567,12 +487,9 @@ public class Unit_US : MonoBehaviour, IUnit {
         transform.Find("Body").GetComponent<SpriteRenderer>().sprite = usPinnedSprite;
     }
 
-    public string GetTeam(){
+    public override string GetTeam(){
         return "US";
     }
 
-    public void RotateTowards(Vector3 targetPosition){
-        Vector3 rotationDir = (targetPosition - transform.position).normalized;
-        iMoveRotation.SetRotation(rotationDir);
-    }
+
 }
