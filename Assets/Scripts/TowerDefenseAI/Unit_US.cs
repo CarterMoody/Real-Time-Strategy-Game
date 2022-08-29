@@ -80,10 +80,11 @@ public class Unit_US : Unit_AI {
     private IMoveRotation iMoveRotation;
     private const float SPEED = 1f;
 
-    private HealthSystem healthSystem;
+// Now in Unit_AI
+/*     private HealthSystem healthSystem;
     private AmmoSystem ammoSystem;
     private EXPSystem expSystem;
-    private RifleSkillSystem rifleSkillSystem;
+    private RifleSkillSystem rifleSkillSystem; */
     private Character_Base characterBase;
     private State state;
     private Vector3 lastMoveDir;
@@ -128,7 +129,8 @@ public class Unit_US : Unit_AI {
     //private Unit_USAnimType hitUnit_USAnim;
     //private Unit_USAnimType attackUnit_USAnim;
 
-    private enum State {
+    // probably need to delete this if it's now controlled in the Unit_AI parent
+    public enum State {
         Normal,
         Attacking,
         Moving,
@@ -145,6 +147,7 @@ public class Unit_US : Unit_AI {
     [SerializeField] Sprite usPinnedSprite;
 
     private void Awake() {
+        setTeam("US"); // switch to Enum eventually
         //baseStats = gameObject.GetComponent<Unit_Base_Stats>();
         unit_USList.Add(this);
         characterBase = gameObject.GetComponent<Character_Base>();
@@ -487,9 +490,10 @@ public class Unit_US : Unit_AI {
         transform.Find("Body").GetComponent<SpriteRenderer>().sprite = usPinnedSprite;
     }
 
-    public override string GetTeam(){
-        return "US";
-    }
+// Now set in Awake and stored in Unit_AI
+/*     public override string GetTeam(){
+        return US;
+    } */
 
 
 }

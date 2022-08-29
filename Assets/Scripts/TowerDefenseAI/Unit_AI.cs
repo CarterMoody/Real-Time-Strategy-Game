@@ -16,6 +16,33 @@ public class Unit_AI : MonoBehaviour, IUnit
     public AudioClip AR15_Shot;
     public AudioClip AR15_Reload;
 
+    public AudioClip randomClip;
+    public AudioClip[] FleshHits;
+
+    // Used to be in specific Unit class... may need moving
+    // At least these are the main default states...
+    //  Possibly create a specific unit state variable at a lower Unit specific level
+    //  to handle special states
+    public enum State {
+        Normal,
+        Attacking,
+        Moving,
+        Busy,
+        Reloading,
+        Pinned,
+        Aiming
+    }
+
+     public State state;
+
+// Need to switch to enum and possibly put in Unit_AI
+/*     public enum Team{
+        US,
+        DE
+    }
+
+    public Team team_; */
+    public string team_;
 
 
     private Vector3 projectileShootFromPosition_;
@@ -53,6 +80,19 @@ public class Unit_AI : MonoBehaviour, IUnit
     private bool foundTarget_;
     private float targetTimer_;
     private float targetTime_;
+
+    // Pinning
+    private float pinnedTimer_;
+    private float pinnedTime_;
+    private bool pinned_;
+
+    // Stat Tracking Systems
+    // May want to privatize and control here eventually...
+    public HealthSystem healthSystem;
+    public AmmoSystem ammoSystem;
+    public EXPSystem expSystem;
+    public RifleSkillSystem rifleSkillSystem;
+
     private void Awake()
     {
         instance = this;
@@ -443,7 +483,7 @@ public class Unit_AI : MonoBehaviour, IUnit
     {
         int currentAmmo = ammoSystem.GetAmmo();
         if (IsOutOfAmmo()){
-            unit_AI.ExecuteReload(); // begin reloading
+            ExecuteReload(); // begin reloading
         }
         else{ // finished reloading 
             SetStateNormal();
@@ -453,9 +493,21 @@ public class Unit_AI : MonoBehaviour, IUnit
     }
 
     // This will likely need fixing...
+    // Need to make this pure virtual with only implementation in child class maybe?
     public virtual IUnit GetClosestEnemy() {
-        //return Unit_DE.GetClosestUnit_DE(transform.position, unit_AI.GetAttackRange());
-        Debug.Log("Need to Implement GetClosestEnemy in Specific Unit_US or Unit_DE class?");
+        if (team_ == "US")
+        {
+            return Unit_DE.GetClosestUnit_DE(transform.position, getAttackRange());
+        }
+        else if (team_ == "DE")
+        {
+            return Unit_US.GetClosestUnit_US(transform.position, getAttackRange());
+        }
+        return null;
+        
+        //
+        //Debug.Log("Need to Implement GetClosestEnemy in Specific Unit_US or Unit_DE class?");
+
     }
 
     public void addEXP(int amount){
@@ -469,14 +521,29 @@ public class Unit_AI : MonoBehaviour, IUnit
 
     // likely needs fixing
     public void Pin(){
-        pinnedTimer = pinnedTime;
-        pinned = true; 
+        pinnedTimer_ = pinnedTime_;
+        pinned_ = true; 
         SetStatePinned();
     }
 
     public virtual string GetTeam(){
-        print("Need to implement in specific Unit class");
-        return "";
+        print("Need to set in specific Unit class");
+        return team_;
+    }
+    public void setTeam(string team)
+    {
+        team_ = team;
+    }
+
+    public virtual void SetSpriteNormal(){
+        //transform.Find("Body").GetComponent<SpriteRenderer>().sprite = normalSprite;
+        // implement this in specific class please!
+        Debug.Log("Implement in specific Unit class");
+    }
+    public virtual void SetSpritePinned(){
+        //transform.Find("Body").GetComponent<SpriteRenderer>().sprite = normalSprite;
+        // implement this in specific class please!
+        Debug.Log("Implement in specific Unit class");
     }
 
 }

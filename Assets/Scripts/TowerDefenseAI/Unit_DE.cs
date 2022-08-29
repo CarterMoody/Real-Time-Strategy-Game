@@ -135,6 +135,7 @@ public class Unit_DE : Unit_AI {
     }
 
     private void Awake() {
+        setTeam("DE");
         unit_DEList.Add(this);
         characterBase = gameObject.GetComponent<Character_Base>();
         unit_AI = GetComponent<Unit_AI>();
@@ -532,9 +533,9 @@ public class Unit_DE : Unit_AI {
         GetComponent<SpriteRenderer>().sprite = normalSprite;
     }
 
-    public string GetTeam(){
-        return "DE";
-    }
+    //public string GetTeam(){
+    //    return "DE";
+    //}
     public void RotateTowards(Vector3 targetPosition){
         Vector3 rotationDir = (targetPosition - transform.position).normalized;
         iMoveRotation.SetRotation(rotationDir);

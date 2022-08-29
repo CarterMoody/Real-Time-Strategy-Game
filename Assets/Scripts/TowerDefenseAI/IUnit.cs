@@ -27,6 +27,7 @@ public interface IUnit
 
     void Pin();
 
+    // Need to figure out why I can't have this here...
     string GetTeam();
 
 
