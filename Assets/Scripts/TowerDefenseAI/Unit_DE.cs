@@ -79,7 +79,7 @@ public class Unit_DE : Unit_AI {
     private AmmoSystem ammoSystem;
     private EXPSystem expSystem;
     private Character_Base characterBase;
-    private State state;
+    //private State state;
     private Vector3 lastMoveDir;
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
@@ -112,9 +112,9 @@ public class Unit_DE : Unit_AI {
     [SerializeField] Sprite deSoldierSprite;
     [SerializeField] Sprite dePinnedSprite;
     private Sprite normalSprite;
-    private AudioSource source;
-    private AudioClip randomClip;
-    public AudioClip[] FleshHits;
+    //private AudioSource source;
+    //private AudioClip randomClip;
+    //public AudioClip[] FleshHits;
 
 
     private bool enemyInRange; // used to determine if should rotate based on movement or enemy position.
@@ -124,7 +124,7 @@ public class Unit_DE : Unit_AI {
     //private Unit_DEAnimType hitUnit_DEAnim;
     //private Unit_DEAnimType attackUnit_DEAnim;
 
-    private enum State {
+/*     private enum State {
         Normal,
         Attacking,
         Moving,
@@ -132,7 +132,7 @@ public class Unit_DE : Unit_AI {
         Reloading,
         Pinned,
         Aiming
-    }
+    } */
 
     private void Awake() {
         setTeam("DE");

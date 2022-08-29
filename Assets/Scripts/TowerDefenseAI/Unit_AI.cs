@@ -12,7 +12,7 @@ public class Unit_AI : MonoBehaviour, IUnit
 
     private IUnit iUnit;
     private IMoveRotation iMoveRotation;
-    private AudioSource source;
+    public AudioSource source;
     public AudioClip AR15_Shot;
     public AudioClip AR15_Reload;
 

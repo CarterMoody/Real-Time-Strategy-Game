@@ -86,7 +86,7 @@ public class Unit_US : Unit_AI {
     private EXPSystem expSystem;
     private RifleSkillSystem rifleSkillSystem; */
     private Character_Base characterBase;
-    private State state;
+    //private State state;
     private Vector3 lastMoveDir;
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
@@ -116,9 +116,9 @@ public class Unit_US : Unit_AI {
     public IUnit currentTargetEnemy; // set when AimEnemy is called
     public Vector3 currentTargetAim; // What positon the unit should be aiming at
     public Vector3 currentTargetPosition; // set when AimPosition is called
-    private AudioSource source;
-    private AudioClip randomClip;
-    public AudioClip[] FleshHits;
+    //private AudioSource source;
+    //private AudioClip randomClip;
+    //public AudioClip[] FleshHits;
 
 
 
@@ -130,7 +130,7 @@ public class Unit_US : Unit_AI {
     //private Unit_USAnimType attackUnit_USAnim;
 
     // probably need to delete this if it's now controlled in the Unit_AI parent
-    public enum State {
+/*     public enum State {
         Normal,
         Attacking,
         Moving,
@@ -138,7 +138,7 @@ public class Unit_US : Unit_AI {
         Reloading,
         Pinned,
         Aiming
-    }
+    } */
 
     [SerializeField] Sprite usSoldierSprite;
     [SerializeField] Sprite usGunnerSprite;
@@ -161,6 +161,7 @@ public class Unit_US : Unit_AI {
 
         // Move to Unit_AI?
         SetStateNormal();
+        // test
 
         source = GetComponent<AudioSource>();           // Gets the component responsible for playing Sounds
 
